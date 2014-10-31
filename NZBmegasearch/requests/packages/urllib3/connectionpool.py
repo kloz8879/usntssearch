@@ -322,15 +322,11 @@ class HTTPConnectionPool(ConnectionPool, RequestMethods):
 
         return (scheme, host, port) == (self.scheme, self.host, self.port)
 	
-	#BS Fix	
-	def urlopen(self, method, url, body=None, headers=None, retries=10,
-                redirect=True, assert_same_host=False, timeout=10,
-                pool_timeout=None, release_conn=None, **response_kw):
-"""
+
     def urlopen(self, method, url, body=None, headers=None, retries=3,
                 redirect=True, assert_same_host=True, timeout=_Default,
                 pool_timeout=None, release_conn=None, **response_kw):
-"""
+
         """
         Get a connection from the pool and perform an HTTP request. This is the
         lowest level call for making a request, so you'll need to specify all
